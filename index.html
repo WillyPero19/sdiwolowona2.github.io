@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Informasi & OPS Sekolah</title>
+    <!-- Menggunakan Bootstrap CSS untuk tampilan rapi dan responsif -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Menggunakan Chart.js untuk menampilkan grafik residu data -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        .hero-section { background: #0d6efd; color: white; padding: 40px 0; text-align: center; }
+        .card-link { transition: transform 0.2s; text-decoration: none; color: initial; }
+        .card-link:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Hero -->
+    <div class="hero-section mb-4">
+        <div class="container">
+            <h1>Pusat Informasi & Layanan Sekolah</h1>
+            <p>Halaman Resmi Operator Sekolah (OPS) untuk Akses Cepat Civitas Akademika</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Kolom Kiri: Tautan Layanan Sekolah -->
+            <div class="col-md-7 mb-4">
+                <h3 class="mb-3">🔗 Tautan Layanan & Aplikasi Sekolah</h3>
+                <div class="row g-3">
+                    <!-- Tautan PPDB -->
+                    <div class="col-sm-6">
+                        <a href="https://alamat-ppdb-sekolah-anda.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-primary">📝 Pendaftaran PPDB</h5>
+                                <p class="card-text text-muted small">Link pendaftaran online siswa baru.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tautan E-Ujian -->
+                    <div class="col-sm-6">
+                        <a href="https://alamat-eujian-sekolah-anda.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-danger">💻 E-Ujian</h5>
+                                <p class="card-text text-muted small">Pelaksanaan ujian berbasis komputer/online.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tautan Tugas Pengguna Sekolah -->
+                    <div class="col-sm-6">
+                        <a href="https://alamat-tugas-sekolah.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-success">📚 Tugas & LMS</h5>
+                                <p class="card-text text-muted small">Pengumpulan tugas siswa dan materi guru.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tautan Google Form Residu / Kontak -->
+                    <div class="col-sm-6">
+                        <a href="https://forms.gle" target="_blank" class="card h-100 card-link shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-warning">⚠️ Lapor Residu Data</h5>
+                                <p class="card-text text-muted small">Formulir bagi siswa yang datanya belum valid.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Grafik Residu Data -->
+            <div class="col-md-5 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5 mb-3">📊 Grafik Residu Data Siswa (Dapodik)</h3>
+                        <p class="text-muted small">Pembaruan berkala status validasi data siswa di sekolah.</p>
+                        <canvas id="residuChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script untuk membuat grafik -->
+    <script>
+        const ctx = document.getElementById('residuChart').getContext('2d');
+        const residuChart = new Chart(ctx, {
+            type: 'pie', // Tipe grafik lingkaran
+            data: {
+                labels: ['Data Valid', 'Residu NISN', 'Residu NIK', 'Residu Nama/Ortu'],
+                datasets: [{
+                    data:, // Silakan ubah angka persentase/jumlah ini sesuai kondisi sekolah Anda
+                    backgroundColor: ['#198754', '#dc3545', '#fd7e14', '#0dced1'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
