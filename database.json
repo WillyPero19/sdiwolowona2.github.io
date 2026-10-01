@@ -1,0 +1,79 @@
+{
+  "lastUpdate": "1/10/2026, 20.04.27",
+  "totalSiswa": 105,
+  "totalGuru": 11,
+  "totalTendik": 2,
+  "residuTotal": 3,
+  "listPengumuman": [
+    {
+      "Badge": "Penting",
+      "Tipe": "info",
+      "Judul": "Pengambilan Rapor",
+      "Isi": "Wali murid hadir pada hari sabtu munggu ini"
+    },
+    {
+      "Badge": "Libur",
+      "Tipe": "warning",
+      "Judul": "Libur Hari Raya",
+      "Isi": "Kegiatan KBM diliburkan mulai tanggal 12 hingga 15"
+    },
+    {
+      "Badge": "Libur",
+      "Tipe": "warning",
+      "Judul": "Libur Hari Raya",
+      "Isi": "Kegiatan KBM diliburkan mulai tanggal 12 hingga 15"
+    },
+    {
+      "Badge": "Penting",
+      "Tipe": "info",
+      "Judul": "Pengambilan Rapor",
+      "Isi": "Wali murid hadir pada hari sabtu munggu ini"
+    }
+  ],
+  "listResidu": [
+    {
+      "NISN": 122233312,
+      "Nama Siswa": "Willy Pero",
+      "Kelas": "Kelas 4",
+      "Keterangan Residu": "Fotocopy Akta & KK"
+    },
+    {
+      "NISN": 442322322,
+      "Nama Siswa": "Noni",
+      "Kelas": "Kelas 3",
+      "Keterangan Residu": "Scan Kartu"
+    },
+    {
+      "NISN": 445555553,
+      "Nama Siswa": "Tono",
+      "Kelas": "Kelas 2",
+      "Keterangan Residu": "NIK tidak ada"
+    }
+  ],
+  "listDataSiswa": [
+    {
+      "NISN": 12345,
+      "Nama Siswa": "Budi s",
+      "Kelas": "Kelas 4A",
+      "Kehadiran": "Hadir (98%)",
+      "Status Berkas": "Belum Lengkap",
+      "Rata Rata Nilai": 85.5
+    },
+    {
+      "NISN": 67890,
+      "Nama Siswa": "Siti A",
+      "Kelas": "5B",
+      "Kehadiran": "Sakit (4 Hari)",
+      "Status Berkas": "Belum Lengkap",
+      "Rata Rata Nilai": 86.5
+    },
+    {
+      "NISN": 11223,
+      "Nama Siswa": "Andina M",
+      "Kelas": "Kelas 6",
+      "Kehadiran": "Hadir (100%)",
+      "Status Berkas": "Belum Lengkap",
+      "Rata Rata Nilai": 87.5
+    }
+  ]
+}

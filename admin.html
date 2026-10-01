@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Update Data Sekolah</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- SheetJS CDN untuk Membaca Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body style="background-color: #f1f5f9; padding: 2rem;">
+
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+        <h1 style="color: #1e293b; margin-bottom: 0.5rem;">⚙️ Panel Admin Sekolah</h1>
+        <p style="color: #64748b; margin-bottom: 1.5rem;">Upload file Excel terbaru untuk memperbarui data statistik & residu di halaman utama.</p>
+        
+        <hr style="margin-bottom: 1.5rem; border: none; border-top: 1px solid #e2e8f0;">
+
+        <!-- FORM UPLOAD EXCEL -->
+        <div style="text-align: center; border: 2px dashed #cbd5e1; padding: 2rem; border-radius: 8px; background: #f8fafc;">
+            <p style="font-weight: bold; margin-bottom: 1rem;">Pilih File `.xlsx` / `.xls` Data Sekolah:</p>
+            <input type="file" id="excel-input" accept=".xlsx, .xls" style="display: block; margin: 0 auto 1rem auto;">
+            <button id="btn-proses" style="background-color: #10b981; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                🚀 Perbarui Data Web Sekarang
+            </button>
+        </div>
+
+        <div id="status-message" style="margin-top: 1.5rem; font-weight: bold; text-align: center;"></div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="index.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: bold;">
+                🔗 Buka / Lihat Halaman Utama (index.html) →
+            </a>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

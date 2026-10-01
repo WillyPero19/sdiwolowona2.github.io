@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Utama - SD Negeri Kita</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <!-- HEADER / NAVBAR -->
+        <header class="header-bar">
+            <div class="brand">
+                <h1>SD NEGERI KITA</h1>
+                <span class="sub-brand">Dashboard Eksekutif & Informasi Utama</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item active">Beranda</a>
+                <a href="#pengumuman-sec" class="nav-item">Pengumuman</a>
+                <a href="admin.html" target="_blank" class="btn-admin-link">⚙️ Panel Admin</a>
+                <button class="btn-nav" onclick="openModal('modal-cek-nilai')">🔍 Cek Nilai / Absen</button>
+            </nav>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Selamat Datang di SD Negeri Kita</h2>
+                <p>Membentuk karakter, membangun masa depan. Informasi terpadu dan transparan untuk seluruh warga sekolah.</p>
+            </div>
+        </section>
+
+        <!-- MAIN DASHBOARD GRID -->
+        <main class="dashboard-grid">
+
+            <!-- KARTU 1: STATISTIK RINGKAS -->
+            <div class="card card-stat">
+                <div class="stat-box">
+                    <span class="icon">👨‍🎓</span>
+                    <div>
+                        <h3>Jumlah Siswa</h3>
+                        <p class="stat-value" id="val-total-siswa">0</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="icon">👨‍🏫</span>
+                    <div>
+                        <h3>Jumlah Guru</h3>
+                        <p class="stat-value" id="val-total-guru">0</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="icon">🧑‍💼</span>
+                    <div>
+                        <h3>Jumlah Tendik</h3>
+                        <p class="stat-value" id="val-total-tendik">0</p>
+                    </div>
+                </div>
+                <div class="stat-box warning-box">
+                    <span class="icon">⚠️</span>
+                    <div>
+                        <h3>Residu Data</h3>
+                        <p class="stat-value" id="val-residu-total">0 Siswa</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KARTU 2: GRAFIK RESIDU DATA SISWA -->
+            <div class="card card-chart">
+                <h2>Grafik Kelengkapan Data Siswa</h2>
+                <div class="chart-container">
+                    <canvas id="chartResidu"></canvas>
+                </div>
+            </div>
+
+            <!-- KARTU 3: PENGUMUMAN PENTING -->
+            <div class="card card-info" id="pengumuman-sec">
+                <h2>Pengumuman Utama</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="badge info">Penting</span>
+                        <strong>Pengambilan Rapor:</strong> Wali murid wajib hadir Sabtu ini.
+                    </li>
+                    <li>
+                        <span class="badge warning">Residu</span>
+                        <strong>Verifikasi Berkas:</strong> Silakan cek daftar siswa yang belum lengkap data administrasinya.
+                    </li>
+                </ul>
+                <button class="btn-link" onclick="openModal('modal-residu-detail')">Lihat Detail Siswa Belum Lengkap →</button>
+            </div>
+
+        </main>
+
+        <footer class="status-footer">
+            <p>&copy; 2026 SD Negeri Kita. Dashboard Tanpa Server (Excel Synchronized).</p>
+        </footer>
+
+    </div>
+
+    <!-- MODAL 1: DETAIL RESIDU DATA -->
+    <div id="modal-residu-detail" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-residu-detail')">&times;</span>
+            <h2>Daftar Detail Siswa Belum Lengkap (Residu)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NISN</th>
+                            <th>Nama Siswa</th>
+                            <th>Kelas</th>
+                            <th>Keterangan Residu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabel-residu-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: CEK NILAI / ABSEN SISWA -->
+    <div id="modal-cek-nilai" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-cek-nilai')">&times;</span>
+            <h2>🔍 Cek Nilai & Absensi Siswa</h2>
+            <p>Masukkan NISN Siswa untuk melihat ringkasan capaian:</p>
+            <div class="search-box">
+                <input type="text" id="input-nisn" placeholder="Contoh: 12345">
+                <button onclick="cariSiswa()">Cari</button>
+            </div>
+            <div id="hasil-cek-siswa" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <!-- External Script JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
