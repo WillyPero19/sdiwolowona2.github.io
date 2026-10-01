@@ -3,105 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Informasi & OPS Sekolah</title>
-    <!-- Menggunakan Bootstrap CSS untuk tampilan rapi dan responsif -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <!-- Menggunakan Chart.js untuk menampilkan grafik residu data -->
-    <script src="https://jsdelivr.net"></script>
+    <title>Profil Resmi SD Inpres Wolowona 2</title>
     <style>
-        .hero-section { background: #0d6efd; color: white; padding: 40px 0; text-align: center; }
-        .card-link { transition: transform 0.2s; text-decoration: none; color: initial; }
-        .card-link:hover { transform: translateY(-5px); }
+        /* --- RESET & VARIABEL DASAR --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; background-color: #f8fafc; line-height: 1.6; }
+        
+        /* --- LAYOUT UTAMA --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        /* --- HERO HEADER --- */
+        header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 50px 20px; text-align: center; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; letter-spacing: -0.5px; }
+        header p { font-size: 1rem; opacity: 0.9; }
+
+        /* --- SECTION STRUKTUR --- */
+        .section-title { font-size: 1.4rem; color: #1e3a8a; border-left: 4px solid #3b82f6; padding-left: 10px; margin: 35px 0 15px 0; font-weight: 600; }
+        .card-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+
+        /* --- KARTU LAYANAN (PPDB, E-UJIAN, TUGAS) --- */
+        .card { background: white; border-radius: 8px; padding: 20px; flex: 1 1 calc(33.333% - 14px); min-width: 250px; text-decoration: none; color: inherit; border: 1px solid #e2e8f0; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-3px); border-color: #3b82f6; box-shadow: 0 10px 15px -3px rgba(59,130,246,0.1); }
+        .card h3 { font-size: 1.1rem; color: #1e3a8a; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .card p { font-size: 0.875rem; color: #64748b; }
+
+        /* --- BLOK INFO SEKOLAH --- */
+        .info-block { background: white; border-radius: 8px; padding: 25px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .info-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; }
+        .info-item { flex: 1 1 calc(50% - 8px); background: #f1f5f9; padding: 12px 15px; border-radius: 6px; font-size: 0.9rem; }
+        .info-item strong { color: #475569; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; margin-top: 50px; padding: 20px; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+
+        /* --- RESPONSIVITAS LAYAR HP --- */
+        @media (max-width: 768px) {
+            header { padding: 35px 15px; }
+            header h1 { font-size: 1.7rem; }
+            .card { flex: 1 1 100%; }
+            .info-item { flex: 1 1 100%; }
+        }
     </style>
 </head>
-<body class="bg-light">
-
-    <!-- Header / Hero -->
-    <div class="hero-section mb-4">
-        <div class="container">
-            <h1>Pusat Informasi & Layanan Sekolah</h1>
-            <p>Halaman Resmi Operator Sekolah (OPS) untuk Akses Cepat Civitas Akademika</p>
-        </div>
-    </div>
+<body>
 
     <div class="container">
-        <div class="row">
-            <!-- Kolom Kiri: Tautan Layanan Sekolah -->
-            <div class="col-md-7 mb-4">
-                <h3 class="mb-3">🔗 Tautan Layanan & Aplikasi Sekolah</h3>
-                <div class="row g-3">
-                    <!-- Tautan PPDB -->
-                    <div class="col-sm-6">
-                        <a href="https://alamat-ppdb-sekolah-anda.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-primary">📝 Pendaftaran PPDB</h5>
-                                <p class="card-text text-muted small">Link pendaftaran online siswa baru.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Tautan E-Ujian -->
-                    <div class="col-sm-6">
-                        <a href="https://alamat-eujian-sekolah-anda.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-danger">💻 E-Ujian</h5>
-                                <p class="card-text text-muted small">Pelaksanaan ujian berbasis komputer/online.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Tautan Tugas Pengguna Sekolah -->
-                    <div class="col-sm-6">
-                        <a href="https://alamat-tugas-sekolah.com" target="_blank" class="card h-100 card-link shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-success">📚 Tugas & LMS</h5>
-                                <p class="card-text text-muted small">Pengumpulan tugas siswa dan materi guru.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Tautan Google Form Residu / Kontak -->
-                    <div class="col-sm-6">
-                        <a href="https://forms.gle" target="_blank" class="card h-100 card-link shadow-sm border-0">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-warning">⚠️ Lapor Residu Data</h5>
-                                <p class="card-text text-muted small">Formulir bagi siswa yang datanya belum valid.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Header Profil -->
+        <header>
+            <h1>SD INPRES WOLOWONA 2</h1>
+            <p>Membentuk Generasi Cerdas, Berkarakter, dan Berbudaya</p>
+        </header>
 
-            <!-- Kolom Kanan: Grafik Residu Data -->
-            <div class="col-md-5 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <div class="card-body">
-                        <h3 class="card-title h5 mb-3">📊 Grafik Residu Data Siswa (Dapodik)</h3>
-                        <p class="text-muted small">Pembaruan berkala status validasi data siswa di sekolah.</p>
-                        <canvas id="residuChart" width="400" height="300"></canvas>
-                    </div>
-                </div>
+        <!-- Informasi Identitas Sekolah -->
+        <div class="section-title">Identitas & Informasi Sekolah</div>
+        <div class="info-block">
+            <p>Selamat datang di portal informasi resmi SD Inpres Wolowona 2. Halaman ini dikelola langsung oleh Operator Sekolah (OPS) untuk mempermudah akses informasi publik dan pelayanan administrasi digital.</p>
+            <div class="info-grid">
+                <div class="info-item"><strong>NPSN</strong>50302772</div>
+                <div class="info-item"><strong>Status Sekolah</strong>Negeri</div>
+                <div class="info-item"><strong>Kecamatan / Kabupaten</strong>Ende Timur / Ende</div>
+                <div class="info-item"><strong>Provinsi</strong>Nusa Tenggara Timur</div>
             </div>
         </div>
+
+        <!-- Tautan Navigasi Aplikasi Resmi -->
+        <div class="section-title">Akses Layanan Digital Sekolah</div>
+        <div class="card-grid">
+            <!-- Pendaftaran Online / PPDB -->
+            <a href="https://alamat-link-ppdb.com" target="_blank" class="card">
+                <h3>📝 Pendaftaran PPDB</h3>
+                <p>Akses formulir pendaftaran online untuk calon siswa baru tahun ajaran mendatang.</p>
+            </a>
+
+            <!-- Pelaksanaan E-Ujian -->
+            <a href="https://alamat-link-eujian.com" target="_blank" class="card">
+                <h3>💻 Pelaksanaan E-Ujian</h3>
+                <p>Ruang ujian digital sekolah berbasis komputer untuk penilaian siswa secara berkala.</p>
+            </a>
+
+            <!-- Pengumpulan Tugas Sekolah -->
+            <a href="https://alamat-link-tugas.com" target="_blank" class="card">
+                <h3>📚 Tugas Pengguna Sekolah</h3>
+                <p>Platform pembelajaran dan pengumpulan lembar kerja siswa jarak jauh.</p>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 SD Inpres Wolowona 2. Halaman Resmi dikelola oleh Halaman Web Operator.</p>
+        </footer>
     </div>
 
-    <!-- Script untuk membuat grafik -->
-    <script>
-        const ctx = document.getElementById('residuChart').getContext('2d');
-        const residuChart = new Chart(ctx, {
-            type: 'pie', // Tipe grafik lingkaran
-            data: {
-                labels: ['Data Valid', 'Residu NISN', 'Residu NIK', 'Residu Nama/Ortu'],
-                datasets: [{
-                    data:, // Silakan ubah angka persentase/jumlah ini sesuai kondisi sekolah Anda
-                    backgroundColor: ['#198754', '#dc3545', '#fd7e14', '#0dced1'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'bottom' }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
